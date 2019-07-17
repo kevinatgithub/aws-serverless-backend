@@ -1,0 +1,40 @@
+Pool Id us-east-2_IpYIzLBff
+Pool ARN arn:aws:cognito-idp:us-east-2:022016069116:userpool/us-east-2_IpYIzLBff
+
+app client
+name : notes-app
+client id : 48bs3diig0o78hhg7pt5sjfp2o
+
+aws cognito-idp sign-up \ --region us-east-2 \ --client-id 48bs3diig0o78hhg7pt5sjfp2o \ --username admin@example.com \ --password Passw0rd!
+
+aws cognito-idp sign-up --region us-east-2 --client-id 48bs3diig0o78hhg7pt5sjfp2o --username admin@example.com --password Passw0rd!
+
+aws cognito-idp admin-confirm-sign-up --region us-east-2 --user-pool-id us-east-2_IpYIzLBff --username admin@example.com
+
+noteId f26b2460-a8ac-11e9-af10-3f5af7e3b393
+
+
+=============
+
+Service Information
+service: notes-app-api
+stage: prod
+region: us-east-2
+stack: notes-app-api-prod
+resources: 35
+api keys:
+  None
+endpoints:
+  POST - https://ecub1uvu2l.execute-api.us-east-2.amazonaws.com/prod/notes
+  GET - https://ecub1uvu2l.execute-api.us-east-2.amazonaws.com/prod/notes/{id}
+  GET - https://ecub1uvu2l.execute-api.us-east-2.amazonaws.com/prod/notes
+  PUT - https://ecub1uvu2l.execute-api.us-east-2.amazonaws.com/prod/notes/{id}
+  DELETE - https://ecub1uvu2l.execute-api.us-east-2.amazonaws.com/prod/notes/{id}
+functions:
+  create: notes-app-api-prod-create
+  get: notes-app-api-prod-get
+  list: notes-app-api-prod-list
+  update: notes-app-api-prod-update
+  delete: notes-app-api-prod-delete
+layers:
+  None
